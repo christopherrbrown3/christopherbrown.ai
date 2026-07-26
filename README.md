@@ -28,7 +28,7 @@ The site is ready for GitHub Pages but is not published there yet. The included 
 
 1. Open **Settings → Pages** in GitHub.
 2. Under **Build and deployment**, select **GitHub Actions** as the source.
-3. Run the “Deploy to GitHub Pages” workflow, or push to `main`.
+3. Run the “Deploy to GitHub Pages” workflow.
 
 The site uses no backend, API keys, analytics, tracking, cookies, or paid services.
 
