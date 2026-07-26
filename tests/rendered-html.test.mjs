@@ -20,7 +20,7 @@ test("renders the production marketing page", async () => {
 
   const html = await response.text();
   assert.match(html, /Software built for your business\./);
-  assert.match(html, /Practical software for<br\/>everyday business problems\./);
+  assert.match(html, /Start with the outcome, not the technology\./);
   assert.match(html, /Currently in/);
   assert.match(html, /application\/ld\+json/);
   assert.match(html, /og:image/);
