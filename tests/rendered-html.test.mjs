@@ -20,8 +20,8 @@ test("renders the production marketing page", async () => {
 
   const html = await response.text();
   assert.match(html, /Software built for your business\./);
-  assert.match(html, /Start with the outcome, not the technology\./);
-  assert.match(html, /Currently in/);
+  assert.match(html, /Clear, dependable software without unnecessary complexity\./);
+  assert.match(html, /Private preview/);
   assert.match(html, /application\/ld\+json/);
   assert.match(html, /og:image/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|lorem ipsum/i);

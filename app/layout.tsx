@@ -9,12 +9,14 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/" },
+  robots: { index: true, follow: true },
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   openGraph: {
     title,
     description,
     url: "https://christopherbrown.ai",
     siteName: "christopherbrown.ai",
+    locale: "en_US",
     type: "website",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "christopherbrown.ai — Software built for your business." }],
   },
@@ -38,6 +40,10 @@ const organizationSchema = {
     { "@type": "AdministrativeArea", name: "Maryland" },
   ],
   serviceType: ["Custom business software", "Software integration", "Workflow automation", "Customer portals"],
+  founder: {
+    "@type": "Person",
+    name: "Christopher Brown",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
