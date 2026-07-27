@@ -1,21 +1,21 @@
 const services = [
   {
-    mark: "{ }",
+    icon: "build",
     title: "Custom software",
     copy: "Web applications, internal tools, and customer portals built around your business.",
   },
   {
-    mark: "↔",
+    icon: "connect",
     title: "Software integration",
     copy: "Connect the software you already use so information moves where it needs to go.",
   },
   {
-    mark: "↻",
+    icon: "automate",
     title: "Workflow automation",
     copy: "Reduce repetitive administrative work, duplicate entry, and manual handoffs.",
   },
   {
-    mark: "+",
+    icon: "support",
     title: "Hosting and support",
     copy: "Reliable hosting, maintenance, monitoring, and improvements after launch.",
   },
@@ -83,7 +83,7 @@ export default function Home() {
           <div className="container services-list">
             {services.map((service) => (
               <article key={service.title}>
-                <span className="service-mark" aria-hidden="true">{service.mark}</span>
+                <span className={`service-mark service-mark--${service.icon}`} aria-hidden="true"><i /></span>
                 <div>
                   <h3>{service.title}</h3>
                   <p>{service.copy}</p>

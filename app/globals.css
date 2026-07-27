@@ -76,7 +76,23 @@ summary, a { -webkit-tap-highlight-color: transparent; }
 .services-heading p { max-width: 420px; margin: 0 0 10px; color: var(--muted); }
 .services-list { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .services-list article { min-height: 250px; display: grid; grid-template-columns: 70px 1fr; gap: 24px; padding: 34px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.service-mark { color: var(--clay); font-size: 30px; font-weight: 780; line-height: 1; }
+.service-mark { position: relative; width: 46px; height: 46px; display: grid; place-items: center; border: 1px solid rgba(189,104,77,.3); border-radius: 50%; color: var(--clay); isolation: isolate; transition: color .25s var(--ease-out), border-color .25s var(--ease-out), background-color .25s var(--ease-out), transform .25s var(--ease-out); }
+.services-list article:hover .service-mark { border-color: var(--clay); background: var(--clay); color: var(--white); transform: rotate(-4deg); }
+.service-mark::before, .service-mark::after, .service-mark i, .service-mark i::before { position: absolute; display: block; box-sizing: border-box; content: ""; }
+.service-mark--build::before { width: 21px; height: 17px; border: 2px solid currentColor; border-radius: 2px; }
+.service-mark--build::after { width: 17px; height: 2px; background: currentColor; transform: translateY(-3px); }
+.service-mark--build i { width: 2px; height: 7px; background: currentColor; transform: translate(-5px, 4px); }
+.service-mark--build i::before { width: 2px; height: 5px; background: currentColor; transform: translate(10px, 2px); }
+.service-mark--connect::before, .service-mark--connect::after { width: 12px; height: 12px; border: 2px solid currentColor; border-radius: 50%; }
+.service-mark--connect::before { transform: translateX(-7px); }
+.service-mark--connect::after { transform: translateX(7px); }
+.service-mark--connect i { width: 18px; height: 2px; background: currentColor; }
+.service-mark--automate::before { width: 21px; height: 21px; border: 2px solid currentColor; border-left-color: transparent; border-radius: 50%; transform: rotate(-38deg); }
+.service-mark--automate::after { width: 7px; height: 7px; border-top: 2px solid currentColor; border-right: 2px solid currentColor; transform: translate(8px, -9px) rotate(10deg); }
+.service-mark--automate i { width: 2px; height: 7px; background: currentColor; transform: translate(-6px, 5px); }
+.service-mark--support::before { width: 21px; height: 21px; border: 2px solid currentColor; border-radius: 50%; }
+.service-mark--support::after { width: 15px; height: 2px; background: currentColor; }
+.service-mark--support i { width: 2px; height: 15px; background: currentColor; }
 .services-list h3 { margin-bottom: 14px; font-family: "Iowan Old Style", Georgia, serif; font-size: 29px; font-weight: 400; letter-spacing: -.025em; }
 .services-list p { max-width: 430px; margin: 0; color: var(--muted); font-size: 16px; }
 
@@ -133,7 +149,7 @@ footer { padding-block: 54px 24px; background: var(--paper); }
   .services-heading { align-items: flex-start; flex-direction: column; gap: 20px; margin-bottom: 42px; }
   .services-list { grid-template-columns: 1fr; }
   .services-list article { min-height: auto; grid-template-columns: 52px 1fr; padding: 28px 24px; }
-  .service-mark { font-size: 25px; }
+  .service-mark { width: 42px; height: 42px; }
   .credibility-grid { grid-template-columns: 1fr; gap: 38px; }
   .credibility-grid article:not(:last-child)::after { display: none; }
   .credibility-grid article:not(:last-child) { padding-bottom: 38px; border-bottom: 1px solid rgba(255,255,255,.18); }
