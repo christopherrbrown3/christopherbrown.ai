@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const title = "christopherbrown.ai | Software Built for Small Businesses";
-const description = "Practical custom software, workflow automation, and software integration for small businesses across Washington, DC, Northern Virginia, and Maryland.";
+const title = "Simple Business Tools for Service Companies | Christopher Brown";
+const description = "Simple, practical business tools for contractors, home service companies, property managers, and other owner-run businesses across the Washington, DC area.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://christopherbrown.ai"),
@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     siteName: "christopherbrown.ai",
     locale: "en_US",
     type: "website",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "christopherbrown.ai — Software built for your business." }],
+    images: [{ url: "/og-service-businesses.png", width: 1200, height: 630, alt: "Less busywork. More time for the work that pays." }],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: ["/og.png"],
+    images: ["/og-service-businesses.png"],
   },
 };
 
@@ -39,7 +39,12 @@ const organizationSchema = {
     { "@type": "AdministrativeArea", name: "Northern Virginia" },
     { "@type": "AdministrativeArea", name: "Maryland" },
   ],
-  serviceType: ["Custom business software", "Software integration", "Workflow automation", "Customer portals"],
+  email: "hello@christopherbrown.io",
+  serviceType: ["Simple business tools", "Lead and follow-up organization", "Scheduling support", "Customer communication tools"],
+  audience: {
+    "@type": "BusinessAudience",
+    audienceType: "Service business owners",
+  },
   founder: {
     "@type": "Person",
     name: "Christopher Brown",

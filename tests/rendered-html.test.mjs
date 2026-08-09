@@ -19,10 +19,13 @@ test("renders the production marketing page", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /Software built for your business\./);
-  assert.match(html, /Clear, dependable software without unnecessary complexity\./);
-  assert.match(html, /Private preview/);
+  assert.match(html, /Less busywork\. More time for the work that pays\./);
+  assert.match(html, /Where your day can get easier\./);
+  assert.match(html, /BeerMe/);
+  assert.match(html, /HomeTeam/);
+  assert.match(html, /hello@christopherbrown\.io/);
+  assert.match(html, /mailto:hello@christopherbrown\.io\?subject=Let%27s%20talk%20about%20my%20business/);
   assert.match(html, /application\/ld\+json/);
   assert.match(html, /og:image/);
-  assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|lorem ipsum/i);
+  assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|lorem ipsum|private preview|coming soon|placeholder/i);
 });
