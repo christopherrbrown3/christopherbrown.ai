@@ -93,6 +93,7 @@ export default function Home() {
           </a>
           <nav className="desktop-nav" aria-label="Primary navigation">
             <a href="#services">Services</a>
+            <a href="#pricing">Pricing</a>
             <a href="#work">Work</a>
             <a href="#about">About</a>
             <EmailLink className="header-cta">Email Chris</EmailLink>
@@ -173,6 +174,31 @@ export default function Home() {
                 </div>
               </section>
             ))}
+          </div>
+        </section>
+
+        <section className="pricing-section" id="pricing">
+          <div className="container pricing-layout">
+            <div className="pricing-intro">
+              <p className="pricing-badge"><span aria-hidden="true">✓</span> Free estimates</p>
+              <h2>Start with one project. Add support if you need it.</h2>
+              <p>Tell me what you&apos;d like to make easier, and I&apos;ll give you a clear scope and price before you decide. Choose a one-time project, then add hosting, maintenance, or ongoing support only if it&apos;s useful.</p>
+              <EmailLink className="button button-primary">Get a free estimate <span aria-hidden="true">→</span></EmailLink>
+            </div>
+            <div className="pricing-options">
+              <article>
+                <h3>One-time project</h3>
+                <p>Hire me for one clearly defined job, from a new website to a better way to handle requests or scheduling.</p>
+              </article>
+              <article>
+                <h3>Hosting &amp; maintenance</h3>
+                <p>If you want, I can keep your website online, updated, and running smoothly after launch.</p>
+              </article>
+              <article>
+                <h3>Ongoing support</h3>
+                <p>Keep me available for changes, questions, and new improvements as your business grows.</p>
+              </article>
+            </div>
           </div>
         </section>
 

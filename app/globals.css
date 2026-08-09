@@ -235,6 +235,17 @@ summary, a { -webkit-tap-highlight-color: transparent; }
 .service-items h4 { margin-bottom: 8px; color: var(--navy); font-size: 16px; font-weight: 800; letter-spacing: -.01em; line-height: 1.3; }
 .service-items p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.6; }
 
+.pricing-section { padding-block: clamp(84px, 9vw, 124px); background: var(--mist); }
+.pricing-layout { display: grid; grid-template-columns: .93fr 1.07fr; gap: clamp(64px, 9vw, 122px); align-items: start; }
+.pricing-intro h2 { max-width: 610px; margin-bottom: 26px; font-size: clamp(3.1rem, 5.2vw, 4.8rem); }
+.pricing-intro > p:not(.pricing-badge) { max-width: 590px; margin-bottom: 30px; color: #3f514b; font-size: 17px; }
+.pricing-badge { width: fit-content; display: inline-flex; align-items: center; gap: 9px; margin-bottom: 25px; padding: 7px 13px 7px 8px; border-radius: 999px; background: var(--white); color: var(--navy); font-size: 13px; font-weight: 820; }
+.pricing-badge span { width: 24px; height: 24px; display: grid; place-items: center; border-radius: 50%; background: var(--clay); color: var(--white); font-size: 12px; }
+.pricing-options { border-top: 1px solid #aebfba; }
+.pricing-options article { display: grid; grid-template-columns: minmax(150px, .58fr) 1fr; gap: 28px; padding: 29px 0 31px; border-bottom: 1px solid #aebfba; }
+.pricing-options h3 { margin: 0; color: var(--ink); font-family: "Iowan Old Style", Georgia, serif; font-size: clamp(23px, 2.2vw, 28px); font-weight: 400; letter-spacing: -.025em; line-height: 1.15; }
+.pricing-options p { margin: 2px 0 0; color: #40514b; font-size: 15px; line-height: 1.6; }
+
 .work-section { padding-block: clamp(88px, 10vw, 140px); background: var(--paper); }
 .work-heading { display: flex; align-items: end; justify-content: space-between; gap: 60px; margin-bottom: 52px; }
 .work-heading h2 { margin: 0; font-size: clamp(3.3rem, 5.8vw, 5.2rem); }
@@ -282,7 +293,7 @@ footer { padding-block: 55px 24px; background: var(--paper); }
 .footer-bottom a { min-height: 36px; display: inline-flex; align-items: flex-start; font-weight: 720; }
 
 @media (max-width: 920px) {
-  .hero-layout, .about-layout, .contact-layout { grid-template-columns: 1fr; }
+  .hero-layout, .pricing-layout, .about-layout, .contact-layout { grid-template-columns: 1fr; }
   .hero-copy { max-width: 760px; }
   .workday-graphic { width: min(620px, 100%); min-height: auto; transform: none; }
   .industry-layout { grid-template-columns: 1fr; gap: 18px; }
@@ -292,6 +303,9 @@ footer { padding-block: 55px 24px; background: var(--paper); }
   .service-group + .service-group { border-left: 0; }
   .service-group-heading { min-height: 0; padding: 27px 28px 27px 0; }
   .service-items { padding-left: 30px; border-left: 1px solid var(--line); }
+  .pricing-layout { gap: 52px; }
+  .pricing-intro { max-width: 720px; }
+  .pricing-options { max-width: 760px; }
   .about-copy { max-width: 680px; padding-top: 0; }
   .contact-copy { max-width: 640px; }
 }
@@ -317,6 +331,8 @@ footer { padding-block: 55px 24px; background: var(--paper); }
   .service-group { display: block; padding: 30px 0 10px; }
   .service-group-heading { padding: 0 0 25px; }
   .service-items { padding-left: 0; border-left: 0; }
+  .pricing-intro h2 { font-size: clamp(3rem, 13vw, 4.15rem); }
+  .pricing-options article { grid-template-columns: 1fr; gap: 8px; padding-block: 24px; }
   .portfolio-copy { padding: 23px 23px 27px; }
   .portfolio-copy h3 { font-size: 31px; }
   .about-layout { gap: 27px; }

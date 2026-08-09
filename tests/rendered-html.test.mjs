@@ -35,6 +35,10 @@ test("renders the production marketing page", async () => {
   assert.match(html, /Local search &amp; SEO/);
   assert.match(html, /Estimates &amp; approvals/);
   assert.match(html, /A simple CRM/);
+  assert.match(html, /Free estimates/);
+  assert.match(html, /Start with one project\. Add support if you need it\./);
+  assert.match(html, /Hosting &amp; maintenance/);
+  assert.match(html, /Ongoing support/);
   assert.match(html, /BeerMe/);
   assert.match(html, /HomeTeam/);
   assert.match(html, /portfolio\/beerme-hero\.png/);
@@ -44,5 +48,12 @@ test("renders the production marketing page", async () => {
   assert.doesNotMatch(html, /hello@christopherbrown\.io|mailto:/i);
   assert.match(html, /application\/ld\+json/);
   assert.match(html, /og:image/);
+  assert.match(html, /https:\/\/christopherbrown\.ai\/og-local-business-v2\.png/);
+  assert.match(html, /og:image:type[^>]+image\/png/);
+  assert.match(html, /og:image:width[^>]+1200/);
+  assert.match(html, /og:image:height[^>]+630/);
+  assert.match(html, /summary_large_image/);
+  assert.match(html, /twitter:image:alt/);
+  assert.doesNotMatch(html, /og-service-businesses\.png/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|lorem ipsum|private preview|coming soon|placeholder/i);
 });

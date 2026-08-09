@@ -17,6 +17,7 @@ export default function MobileMenu() {
       {open && (
         <nav id="mobile-navigation" aria-label="Mobile navigation">
           <a href="#services" onClick={closeMenu}>Services</a>
+          <a href="#pricing" onClick={closeMenu}>Pricing</a>
           <a href="#work" onClick={closeMenu}>Work</a>
           <a href="#about" onClick={closeMenu}>About</a>
           <EmailLink onActivate={closeMenu}>Email Chris</EmailLink>
