@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const title = "Simple Business Tools for Service Companies | Christopher Brown";
-const description = "Simple, practical business tools for contractors, home service companies, property managers, and other owner-run businesses across the Washington, DC area.";
+const title = "Websites & Business Tools for DMV Local Businesses | Christopher Brown";
+const description = "Websites, scheduling, customer follow-up, estimates, local SEO, and practical business tools for owner-run companies across Washington, DC, Maryland, and Northern Virginia.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://christopherbrown.ai"),
@@ -39,11 +39,10 @@ const organizationSchema = {
     { "@type": "AdministrativeArea", name: "Northern Virginia" },
     { "@type": "AdministrativeArea", name: "Maryland" },
   ],
-  email: "hello@christopherbrown.io",
-  serviceType: ["Simple business tools", "Lead and follow-up organization", "Scheduling support", "Customer communication tools"],
+  serviceType: ["Small business websites", "Local search and SEO", "Scheduling and booking", "Customer relationship management", "Estimates and approvals", "Business software integrations"],
   audience: {
     "@type": "BusinessAudience",
-    audienceType: "Service business owners",
+    audienceType: "Local business owners in Washington, DC, Maryland, and Northern Virginia",
   },
   founder: {
     "@type": "Person",

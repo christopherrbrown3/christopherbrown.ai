@@ -1,28 +1,53 @@
+import EmailLink from "./email-link";
 import MobileMenu from "./mobile-menu";
 
-const contactHref =
-  "mailto:hello@christopherbrown.io?subject=Let%27s%20talk%20about%20my%20business&body=Hi%20Chris%2C%0A%0AThe%20part%20of%20my%20business%20I%27d%20like%20to%20make%20easier%20is%3A%0A%0A";
-
-const services = [
+const serviceGroups = [
   {
-    icon: "connect",
-    title: "Keep new business from slipping away",
-    copy: "Stay on top of calls, quote requests, booking inquiries, and follow-ups.",
+    title: "Win more local work",
+    services: [
+      {
+        title: "A website that gets calls",
+        copy: "A clear, mobile-friendly site that makes it easy for people to choose you and get in touch.",
+      },
+      {
+        title: "Local search & SEO",
+        copy: "Help nearby customers find your business when they search for the work you do.",
+      },
+      {
+        title: "Better quote requests",
+        copy: "Collect the right job details and photos before you call someone back.",
+      },
+    ],
   },
   {
-    icon: "build",
-    title: "Keep the day organized",
-    copy: "Make jobs, appointments, properties, projects, and schedule changes easier to manage.",
+    title: "Keep work organized",
+    services: [
+      {
+        title: "Scheduling & booking",
+        copy: "Keep appointments, job times, and team availability together in one place.",
+      },
+      {
+        title: "Customers & follow-up",
+        copy: "A simple CRM for contact details, notes, conversations, and what needs to happen next.",
+      },
+      {
+        title: "Estimates & approvals",
+        copy: "Send professional estimates and give customers a simple way to say yes.",
+      },
+    ],
   },
   {
-    icon: "automate",
-    title: "Cut down on paperwork",
-    copy: "Spend less time copying details, updating spreadsheets, and doing the same task twice.",
-  },
-  {
-    icon: "support",
-    title: "Make things easier for customers",
-    copy: "Give people a clear way to request work, get updates, and know what happens next.",
+    title: "Save time every week",
+    services: [
+      {
+        title: "Connect the tools you use",
+        copy: "Let your website, calendar, email, and accounting tools share information so you enter it once.",
+      },
+      {
+        title: "Reminders & updates",
+        copy: "Send appointment reminders, job updates, and follow-ups without having to remember each one.",
+      },
+    ],
   },
 ];
 
@@ -32,8 +57,8 @@ const portfolio = [
     tagline: "Good friends. Clear tabs.",
     description:
       "A friendly way to remember whose turn it is for beers, coffee, tacos, or a favor—without making friendship feel like accounting.",
-    image: "/portfolio/beerme.png",
-    alt: "BeerMe invitation card beside a friendly beer mug app icon.",
+    image: "/portfolio/beerme-hero.png",
+    alt: "BeerMe app showing a friendly shared tab between friends.",
     href: "https://beerme.christopherbrown.ai",
   },
   {
@@ -41,8 +66,8 @@ const portfolio = [
     tagline: "Tasks. Together. Done right.",
     description:
       "A shared home organizer that keeps chores, routines, and responsibilities clear, so everyone knows what needs doing and who is handling it.",
-    image: "/portfolio/hometeam.png",
-    alt: "HomeTeam invitation card showing a simple household checklist.",
+    image: "/portfolio/hometeam-hero.png",
+    alt: "HomeTeam app showing household tasks, assignees, and daily progress.",
     href: "https://hometeam.christopherbrown.ai",
   },
 ];
@@ -70,9 +95,9 @@ export default function Home() {
             <a href="#services">Services</a>
             <a href="#work">Work</a>
             <a href="#about">About</a>
-            <a className="header-cta" href={contactHref}>Email Chris</a>
+            <EmailLink className="header-cta">Email Chris</EmailLink>
           </nav>
-          <MobileMenu contactHref={contactHref} />
+          <MobileMenu />
         </div>
       </header>
 
@@ -80,11 +105,11 @@ export default function Home() {
         <section className="hero" id="top">
           <div className="container hero-layout">
             <div className="hero-copy">
-              <p className="hero-note"><span aria-hidden="true" /> For service business owners</p>
+              <p className="hero-note"><span aria-hidden="true" /> For local business owners across DC, Maryland &amp; Northern Virginia</p>
               <h1>Less busywork. More time for the work that pays.</h1>
-              <p className="hero-lede">I create simple business tools that help you stay on top of leads, schedules, customers, and follow-up.</p>
+              <p className="hero-lede">I build websites and simple tools that help you get more customers, keep the work organized, and spend less time on paperwork.</p>
               <div className="hero-actions">
-                <a className="button button-primary" href={contactHref}>Tell me what&apos;s slowing you down <span aria-hidden="true">→</span></a>
+                <EmailLink className="button button-primary">Tell me what&apos;s slowing you down <span aria-hidden="true">→</span></EmailLink>
                 <a className="text-link" href="#services">See how I can help <span aria-hidden="true">↓</span></a>
               </div>
               <p className="hero-audience">For home services, contractors, real estate, property management, creative businesses, and other owner-run companies.</p>
@@ -125,18 +150,28 @@ export default function Home() {
 
         <section className="services-section" id="services">
           <div className="container services-heading">
-            <h2>Where your day can get easier.</h2>
-            <p>You don&apos;t need to know what kind of software you need. Start with what takes too long, gets missed, or keeps you at the desk.</p>
+            <div>
+              <p className="section-label">Ways I can help</p>
+              <h2>Useful tools for the work you do every day.</h2>
+            </div>
+            <p>Start with one need. I&apos;ll shape it around the way your business already runs.</p>
           </div>
-          <div className="container services-list">
-            {services.map((service) => (
-              <article key={service.title}>
-                <span className={`service-mark service-mark--${service.icon}`} aria-hidden="true"><i /></span>
-                <div>
-                  <h3>{service.title}</h3>
-                  <p>{service.copy}</p>
+          <div className="container service-groups">
+            {serviceGroups.map((group, groupIndex) => (
+              <section className="service-group" key={group.title}>
+                <div className="service-group-heading">
+                  <span aria-hidden="true">0{groupIndex + 1}</span>
+                  <h3>{group.title}</h3>
                 </div>
-              </article>
+                <div className="service-items">
+                  {group.services.map((service) => (
+                    <article key={service.title}>
+                      <h4>{service.title}</h4>
+                      <p>{service.copy}</p>
+                    </article>
+                  ))}
+                </div>
+              </section>
             ))}
           </div>
         </section>
@@ -147,7 +182,7 @@ export default function Home() {
               <p className="section-label">Recent work</p>
               <h2>A few things I&apos;ve made.</h2>
             </div>
-            <p>Simple products designed around real people and everyday routines.</p>
+            <p>Real products designed to make everyday life feel a little easier.</p>
           </div>
           <div className="container portfolio-grid">
             {portfolio.map((project) => (
@@ -197,8 +232,8 @@ export default function Home() {
             </div>
             <div className="contact-copy">
               <p>No tech terms needed. Tell me what keeps getting missed, repeated, or stuck. A short email is all it takes to start.</p>
-              <a className="button button-dark" href={contactHref}>Email Chris <span aria-hidden="true">→</span></a>
-              <a className="email-address" href="mailto:hello@christopherbrown.io">hello@christopherbrown.io</a>
+              <EmailLink className="button button-dark">Email Chris <span aria-hidden="true">→</span></EmailLink>
+              <span className="email-note">Opens your email app</span>
             </div>
           </div>
         </section>
@@ -208,10 +243,10 @@ export default function Home() {
         <div className="container footer-main">
           <div>
             <a className="wordmark footer-mark" href="#top">christopherbrown<span>.ai</span></a>
-            <p>Practical help for service businesses.</p>
+            <p>Practical help for local businesses.</p>
           </div>
           <div className="footer-contact">
-            <a href="mailto:hello@christopherbrown.io">hello@christopherbrown.io</a>
+            <EmailLink>Email Chris</EmailLink>
             <span>Washington, DC · Northern Virginia · Maryland</span>
           </div>
         </div>

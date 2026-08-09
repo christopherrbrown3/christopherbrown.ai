@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import EmailLink from "./email-link";
 
-export default function MobileMenu({ contactHref }: { contactHref: string }) {
+export default function MobileMenu() {
   const [open, setOpen] = useState(false);
   const closeMenu = () => setOpen(false);
 
@@ -18,7 +19,7 @@ export default function MobileMenu({ contactHref }: { contactHref: string }) {
           <a href="#services" onClick={closeMenu}>Services</a>
           <a href="#work" onClick={closeMenu}>Work</a>
           <a href="#about" onClick={closeMenu}>About</a>
-          <a href={contactHref} onClick={closeMenu}>Email Chris</a>
+          <EmailLink onActivate={closeMenu}>Email Chris</EmailLink>
         </nav>
       )}
     </div>
