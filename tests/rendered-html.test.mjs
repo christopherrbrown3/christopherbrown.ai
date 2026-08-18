@@ -47,6 +47,8 @@ test("renders the production marketing page", async () => {
   assert.match(html, /Opens your email app/);
   assert.doesNotMatch(html, /hello@christopherbrown\.io|mailto:/i);
   assert.match(html, /application\/ld\+json/);
+  assert.match(html, /https:\/\/static\.cloudflareinsights\.com\/beacon\.min\.js/);
+  assert.match(html, /data-cf-beacon=[^>]+9d77a540d1424dd0be48e806bce5d132/);
   assert.match(html, /og:image/);
   assert.match(html, /https:\/\/christopherbrown\.ai\/og-local-business-v3\.png/);
   assert.match(html, /og:image:type[^>]+image\/png/);
