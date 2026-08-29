@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 const title = "Websites & Business Tools for DMV Local Businesses | Christopher Brown";
-const description = "Websites, scheduling, local SEO, and practical business tools for local companies across DC, Maryland, and Northern Virginia. Free estimates and flexible support.";
+const description = "Websites, custom domains, business email, scheduling, local SEO, and practical business tools for local companies across DC, Maryland, and Northern Virginia. Free estimates and flexible support.";
 const socialTitle = "Less busywork. More time for the work that pays.";
 const socialDescription = "Websites and practical tools for local businesses across DC, Maryland, and Northern Virginia. Free estimates, flexible hosting, and ongoing support.";
 const socialImage = "https://christopherbrown.ai/og-local-business-v3.png";
@@ -43,7 +43,7 @@ const organizationSchema = {
     { "@type": "AdministrativeArea", name: "Northern Virginia" },
     { "@type": "AdministrativeArea", name: "Maryland" },
   ],
-  serviceType: ["Small business websites", "Local search and SEO", "Scheduling and booking", "Customer relationship management", "Estimates and approvals", "Business software integrations", "Website hosting and maintenance", "Ongoing website support"],
+  serviceType: ["Small business websites", "Custom domain setup", "Business email setup", "Local search and SEO", "Scheduling and booking", "Customer relationship management", "Estimates and approvals", "Business software integrations", "Website hosting and maintenance", "Ongoing website support"],
   audience: {
     "@type": "BusinessAudience",
     audienceType: "Local business owners in Washington, DC, Maryland, and Northern Virginia",

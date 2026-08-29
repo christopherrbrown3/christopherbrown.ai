@@ -35,6 +35,8 @@ test("renders the production marketing page", async () => {
   assert.match(html, /Local search &amp; SEO/);
   assert.match(html, /Estimates &amp; approvals/);
   assert.match(html, /A simple CRM/);
+  assert.match(html, /Custom domain &amp; business email/);
+  assert.match(html, /web address and professional email set up correctly/);
   assert.match(html, /Free estimates/);
   assert.match(html, /Start with one project\. Add support if you need it\./);
   assert.match(html, /Hosting &amp; maintenance/);

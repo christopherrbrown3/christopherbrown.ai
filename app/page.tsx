@@ -40,6 +40,10 @@ const serviceGroups = [
     title: "Save time every week",
     services: [
       {
+        title: "Custom domain & business email",
+        copy: "Get your web address and professional email set up correctly, without having to sort through all the settings yourself.",
+      },
+      {
         title: "Connect the tools you use",
         copy: "Let your website, calendar, email, and accounting tools share information so you enter it once.",
       },
